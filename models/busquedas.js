@@ -1,5 +1,6 @@
 import "colors"
 import { getData } from "../helpers/dataFetch.js"
+import { leerDB } from "../helpers/persistence.js"
 
 let historial = []
 
@@ -18,8 +19,8 @@ export const agregarHistorial = ( lugar = {}) => {
   
 }
 
-export const leerDB = async () => {
-
+export const leerHistorialDB = async () => {
+  historial = leerDB()
 }
 
 export const buscarCiudades = async ( ciudad = '' ) => {
